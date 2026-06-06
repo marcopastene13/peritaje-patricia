@@ -1,17 +1,16 @@
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Sobre from './components/Sobre'
-import Servicios from './components/Servicios'
-import Peritajes from './components/Peritajes'
-import Trayectoria from './components/Trayectoria'
-import Formacion from './components/Formacion'
-import Contacto from './components/Contacto'
-import Footer from './components/Footer'
-import './index.css'
+import Navbar from "./components/Navbar"
+import Hero from "./components/Hero"
+import Sobre from "./components/Sobre"
+import Servicios from "./components/Servicios"
+import Peritajes from "./components/Peritajes"
+import Trayectoria from "./components/Trayectoria"
+import Formacion from "./components/Formacion"
+import Contacto from "./components/Contacto"
+import Footer from "./components/Footer"
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen">
+    <div className="font-sans">
       <Navbar />
       <Hero />
       <Sobre />
@@ -24,5 +23,3 @@ function App() {
     </div>
   )
 }
-
-export default App

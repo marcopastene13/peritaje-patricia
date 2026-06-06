@@ -1,45 +1,58 @@
-import { FaGraduationCap, FaCertificate } from 'react-icons/fa'
-
-const formacion = [
-  { tipo: 'Pregrado', titulo: 'Licenciatura en Psicología', inst: 'Universidad de Santiago de Chile', anio: '2012' },
-  { tipo: 'Diplomado', titulo: 'Diplomado en Psicología Forense y Peritaje Judicial', inst: 'Universidad Andrés Bello (UNAB)', anio: '2017' },
-  { tipo: 'Diplomado', titulo: 'Diplomado en Psicoterapia Infanto-Juvenil', inst: 'ADIPA', anio: '2019' },
-  { tipo: 'Diplomado', titulo: 'Diplomado en Terapia Cognitivo-Conductual', inst: 'Instituto Virtus', anio: '2021' },
-  { tipo: 'Seminario', titulo: 'Seminario Evaluación de Credibilidad de Testimonio', inst: 'Fiscalía de Chile', anio: '2018' },
-  { tipo: 'Curso', titulo: 'Evaluación de Competencias Parentales', inst: 'Servicio Nacional de Menores (SENAME)', anio: '2016' },
-  { tipo: 'Curso', titulo: 'Intervención en Crisis y Trauma', inst: 'MINSAL', anio: '2020' },
+const academica = [
+  { titulo: "Psicologa", inst: "Universidad de Santiago de Chile (USACH)", anno: "2012" },
+]
+const posgrado = [
+  { titulo: "Diplomado en Psicologia Juridica y Pericia Forense", inst: "Universidad Andres Bello (UNAB)", anno: "2019" },
+  { titulo: "Diplomado en Psicoterapia Infanto-Juvenil", inst: "ADIPA", anno: "2017" },
+  { titulo: "Diplomado en Terapia Cognitivo Conductual", inst: "Instituto Virtus", anno: "2016" },
+  { titulo: "Seminario Internacional de Psicodiagnostico", inst: "Sociedad Chilena de Psicologia Clinica", anno: "2020" },
+  { titulo: "Curso: Evaluacion de Competencias Parentales", inst: "ADIPA", anno: "2021" },
+  { titulo: "Curso: Intervencion en Crisis y Primeros Auxilios Psicologicos", inst: "OPS/OMS Chile", anno: "2022" },
 ]
 
 export default function Formacion() {
-  const colorTipo = { 'Pregrado': '#1f5e54', 'Diplomado': '#2a7c6f', 'Seminario': '#3a9e8e', 'Curso': '#4a6b66' }
-
   return (
-    <section id="formacion" style={{ background: '#ffffff', padding: '5rem 1.5rem' }}>
-      <div className="container-custom">
-        <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-          <span style={{ color: '#2a7c6f', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Formación Académica</span>
-          <h2 style={{ fontSize: '2.2rem', fontWeight: 700, color: '#1a2e2b', margin: '0.5rem 0 1rem' }}>Preparación y Especialización</h2>
-          <p style={{ color: '#4a6b66', fontSize: '1rem', maxWidth: '540px', margin: '0 auto', lineHeight: 1.7 }}>
-            Formación continua en psicología clínica, forense e infanto-juvenil para brindar la mejor atención.
-          </p>
+    <section id="formacion" className="py-24 bg-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <span className="text-[#2a7c6f] font-semibold text-sm uppercase tracking-widest">Formacion</span>
+          <h2 className="mt-2 text-3xl md:text-4xl font-bold text-[#1a2e2b]">Educacion y certificaciones</h2>
         </div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.2rem' }}>
-          {formacion.map((f, i) => (
-            <div key={i} className="card" style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-              <div style={{ width: '44px', height: '44px', borderRadius: '0.5rem', background: colorTipo[f.tipo] || '#2a7c6f', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                {f.tipo === 'Pregrado' ? <FaGraduationCap color="#fff" size={20} /> : <FaCertificate color="#fff" size={18} />}
-              </div>
-              <div style={{ flex: 1 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '0.5rem', marginBottom: '0.2rem' }}>
-                  <span style={{ background: '#e8f4f1', color: colorTipo[f.tipo] || '#2a7c6f', padding: '0.15rem 0.6rem', borderRadius: '2rem', fontSize: '0.72rem', fontWeight: 700 }}>{f.tipo}</span>
-                  <span style={{ color: '#4a6b66', fontSize: '0.78rem', fontWeight: 600 }}>{f.anio}</span>
+        <div className="grid md:grid-cols-2 gap-12">
+          <div>
+            <h3 className="text-xl font-bold text-[#1a2e2b] mb-6 flex items-center gap-2">
+              <span className="w-8 h-1 bg-[#2a7c6f] rounded inline-block"></span>
+              Titulo universitario
+            </h3>
+            {academica.map((f,i) => (
+              <div key={i} className="bg-[#f5f0eb] rounded-xl p-6 mb-4">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <p className="font-bold text-[#1a2e2b]">{f.titulo}</p>
+                    <p className="text-[#4a6b66] text-sm mt-1">{f.inst}</p>
+                  </div>
+                  <span className="bg-[#2a7c6f] text-white text-xs font-bold px-3 py-1 rounded-full">{f.anno}</span>
                 </div>
-                <h4 style={{ fontWeight: 700, color: '#1a2e2b', fontSize: '0.95rem', marginBottom: '0.2rem', lineHeight: 1.4 }}>{f.titulo}</h4>
-                <p style={{ color: '#4a6b66', fontSize: '0.82rem' }}>{f.inst}</p>
               </div>
+            ))}
+          </div>
+          <div>
+            <h3 className="text-xl font-bold text-[#1a2e2b] mb-6 flex items-center gap-2">
+              <span className="w-8 h-1 bg-[#2a7c6f] rounded inline-block"></span>
+              Diplomados y cursos
+            </h3>
+            <div className="space-y-3">
+              {posgrado.map((f,i) => (
+                <div key={i} className="flex gap-4 items-start border-b border-gray-100 pb-3">
+                  <span className="text-[#2a7c6f] font-bold text-sm min-w-12">{f.anno}</span>
+                  <div>
+                    <p className="font-medium text-[#1a2e2b] text-sm">{f.titulo}</p>
+                    <p className="text-[#4a6b66] text-xs mt-0.5">{f.inst}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

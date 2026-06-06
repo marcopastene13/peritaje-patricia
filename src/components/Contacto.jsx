@@ -1,107 +1,121 @@
-import { useState } from 'react'
-import { FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaClock, FaPhone } from 'react-icons/fa'
+import { useState } from "react"
 
 export default function Contacto() {
-  const [form, setForm] = useState({ nombre: '', email: '', telefono: '', motivo: '', mensaje: '' })
+  const [form, setForm] = useState({ nombre: "", email: "", telefono: "", mensaje: "", tipo: "clinica" })
   const [enviado, setEnviado] = useState(false)
 
-  const handleSubmit = (e) => {
+  const onChange = e => setForm({...form, [e.target.name]: e.target.value})
+
+  const onSubmit = e => {
     e.preventDefault()
+    const txt = encodeURIComponent(
+      `Hola Patricia! Mi nombre es ${form.nombre}.%0AEmail: ${form.email}%0ATelefono: ${form.telefono}%0ATipo: ${form.tipo}%0AMensaje: ${form.mensaje}`
+    )
+    window.open(`https://wa.me/56912345678?text=${txt}`, "_blank")
     setEnviado(true)
   }
 
   return (
-    <section id="contacto" style={{ background: '#f5f0eb', padding: '5rem 1.5rem' }}>
-      <div className="container-custom">
-        <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-          <span style={{ color: '#2a7c6f', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Contacto</span>
-          <h2 style={{ fontSize: '2.2rem', fontWeight: 700, color: '#1a2e2b', margin: '0.5rem 0 1rem' }}>Agenda tu consulta</h2>
-          <p style={{ color: '#4a6b66', fontSize: '1rem', maxWidth: '500px', margin: '0 auto', lineHeight: 1.7 }}>
-            Puedes contactarme directamente por WhatsApp o completar el formulario y te responderé a la brevedad.
-          </p>
+    <section id="contacto" className="py-24 bg-[#f5f0eb]">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <span className="text-[#2a7c6f] font-semibold text-sm uppercase tracking-widest">Contacto</span>
+          <h2 className="mt-2 text-3xl md:text-4xl font-bold text-[#1a2e2b]">Agenda tu hora</h2>
+          <p className="mt-4 text-[#4a6b66] max-w-xl mx-auto">Completar el formulario y te contacto a la brevedad para coordinar tu primera sesion.</p>
         </div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: '3rem', alignItems: 'start' }}>
-          {/* Info */}
-          <div>
-            {[
-              { icon: <FaWhatsapp color="#25d366" size={22} />, label: 'WhatsApp', value: '+56 9 1234 5678', href: 'https://wa.me/56912345678' },
-              { icon: <FaPhone color="#2a7c6f" size={20} />, label: 'Teléfono', value: '+56 9 1234 5678', href: 'tel:+56912345678' },
-              { icon: <FaEnvelope color="#2a7c6f" size={20} />, label: 'Email', value: 'patricia@psicologia.cl', href: 'mailto:patricia@psicologia.cl' },
-              { icon: <FaMapMarkerAlt color="#2a7c6f" size={20} />, label: 'Ubicación', value: 'Maipú, Santiago, Chile', href: null },
-              { icon: <FaClock color="#2a7c6f" size={20} />, label: 'Horarios', value: 'Lunes a Viernes 9:00 - 19:00', href: null },
-            ].map(({ icon, label, value, href }) => (
-              <div key={label} className="card" style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '1rem', padding: '1rem 1.2rem' }}>
-                <div style={{ width: '42px', height: '42px', background: '#e8f4f1', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                  {icon}
-                </div>
-                <div>
-                  <div style={{ color: '#4a6b66', fontSize: '0.78rem', marginBottom: '0.1rem' }}>{label}</div>
-                  {href ? (
-                    <a href={href} style={{ color: '#1a2e2b', fontWeight: 600, fontSize: '0.95rem', textDecoration: 'none' }}>{value}</a>
-                  ) : (
-                    <span style={{ color: '#1a2e2b', fontWeight: 600, fontSize: '0.95rem' }}>{value}</span>
-                  )}
-                </div>
+        <div className="grid md:grid-cols-2 gap-12">
+          <div className="space-y-6">
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-[#2a7c6f] rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               </div>
-            ))}
-
-            <a href="https://wa.me/56912345678" target="_blank" rel="noreferrer"
-              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.6rem', background: '#25d366', color: '#fff', padding: '1rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', fontSize: '1rem', marginTop: '0.5rem' }}>
-              <FaWhatsapp size={22} /> Escribir por WhatsApp
-            </a>
+              <div>
+                <p className="font-bold text-[#1a2e2b]">WhatsApp</p>
+                <a href="https://wa.me/56912345678" className="text-[#2a7c6f] hover:underline">+56 9 1234 5678</a>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-[#2a7c6f] rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <p className="font-bold text-[#1a2e2b]">Email</p>
+                <a href="mailto:patricia.santander@psicologa.cl" className="text-[#2a7c6f] hover:underline">patricia.santander@psicologa.cl</a>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-[#2a7c6f] rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <p className="font-bold text-[#1a2e2b]">Ubicacion</p>
+                <p className="text-[#4a6b66]">Centro Psicologico Centenario<br/>Maipo, Region Metropolitana</p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-[#2a7c6f] rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <p className="font-bold text-[#1a2e2b]">Horario</p>
+                <p className="text-[#4a6b66]">Lunes a Viernes: 09:00 - 19:00<br/>Sabado: 09:00 - 13:00</p>
+              </div>
+            </div>
           </div>
-
-          {/* Form */}
-          <div className="card">
+          <div className="bg-white rounded-2xl p-8 shadow-sm">
             {enviado ? (
-              <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
-                <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✅</div>
-                <h3 style={{ color: '#1a2e2b', fontWeight: 700, fontSize: '1.3rem', marginBottom: '0.5rem' }}>Mensaje enviado</h3>
-                <p style={{ color: '#4a6b66' }}>Te contactaré a la brevedad. ¡Gracias!</p>
-                <button onClick={() => setEnviado(false)} className="btn-primary" style={{ marginTop: '1.5rem' }}>Enviar otro mensaje</button>
+              <div className="text-center py-8">
+                <div className="text-5xl mb-4">✅</div>
+                <h3 className="text-xl font-bold text-[#1a2e2b] mb-2">Mensaje enviado</h3>
+                <p className="text-[#4a6b66]">Te redirigimos a WhatsApp. Patricia te respondera a la brevedad.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit}>
-                <h3 style={{ fontWeight: 700, color: '#1a2e2b', fontSize: '1.2rem', marginBottom: '1.5rem' }}>Formulario de contacto</h3>
-                {[['nombre', 'Nombre completo', 'text'], ['email', 'Correo electrónico', 'email'], ['telefono', 'Teléfono (opcional)', 'tel']].map(([field, label, type]) => (
-                  <div key={field} style={{ marginBottom: '1rem' }}>
-                    <label style={{ display: 'block', color: '#1a2e2b', fontWeight: 600, fontSize: '0.88rem', marginBottom: '0.4rem' }}>{label}</label>
-                    <input type={type} value={form[field]} onChange={e => setForm({ ...form, [field]: e.target.value })}
-                      required={field !== 'telefono'}
-                      style={{ width: '100%', padding: '0.7rem 1rem', borderRadius: '0.4rem', border: '1.5px solid #d4ede9', outline: 'none', fontSize: '0.95rem', color: '#1a2e2b', background: '#fafafa', fontFamily: 'inherit' }} />
+              <form onSubmit={onSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-[#1a2e2b] mb-1">Nombre completo</label>
+                  <input name="nombre" value={form.nombre} onChange={onChange} required
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#2a7c6f] focus:ring-1 focus:ring-[#2a7c6f]"
+                    placeholder="Tu nombre"/>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="block text-sm font-medium text-[#1a2e2b] mb-1">Email</label>
+                    <input name="email" type="email" value={form.email} onChange={onChange} required
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#2a7c6f] focus:ring-1 focus:ring-[#2a7c6f]"
+                      placeholder="tu@email.com"/>
                   </div>
-                ))}
-                <div style={{ marginBottom: '1rem' }}>
-                  <label style={{ display: 'block', color: '#1a2e2b', fontWeight: 600, fontSize: '0.88rem', marginBottom: '0.4rem' }}>Motivo de consulta</label>
-                  <select value={form.motivo} onChange={e => setForm({ ...form, motivo: e.target.value })} required
-                    style={{ width: '100%', padding: '0.7rem 1rem', borderRadius: '0.4rem', border: '1.5px solid #d4ede9', outline: 'none', fontSize: '0.95rem', color: '#1a2e2b', background: '#fafafa', fontFamily: 'inherit' }}>
-                    <option value="">Seleccionar...</option>
-                    <option>Psicoterapia individual</option>
-                    <option>Psicoterapia infanto-juvenil</option>
-                    <option>Terapia familiar o de pareja</option>
-                    <option>Psicodiagnóstico</option>
-                    <option>Peritaje psicológico</option>
-                    <option>Otro</option>
+                  <div>
+                    <label className="block text-sm font-medium text-[#1a2e2b] mb-1">Telefono</label>
+                    <input name="telefono" value={form.telefono} onChange={onChange}
+                      className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#2a7c6f] focus:ring-1 focus:ring-[#2a7c6f]"
+                      placeholder="+56 9"/>
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-[#1a2e2b] mb-1">Tipo de consulta</label>
+                  <select name="tipo" value={form.tipo} onChange={onChange}
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#2a7c6f]">
+                    <option value="clinica">Atencion clinica / psicoterapia</option>
+                    <option value="psicodiagnostico">Psicodiagnostico</option>
+                    <option value="peritaje">Peritaje judicial</option>
+                    <option value="otro">Otro</option>
                   </select>
                 </div>
-                <div style={{ marginBottom: '1.5rem' }}>
-                  <label style={{ display: 'block', color: '#1a2e2b', fontWeight: 600, fontSize: '0.88rem', marginBottom: '0.4rem' }}>Mensaje (opcional)</label>
-                  <textarea value={form.mensaje} onChange={e => setForm({ ...form, mensaje: e.target.value })} rows={3}
-                    style={{ width: '100%', padding: '0.7rem 1rem', borderRadius: '0.4rem', border: '1.5px solid #d4ede9', outline: 'none', fontSize: '0.95rem', color: '#1a2e2b', background: '#fafafa', fontFamily: 'inherit', resize: 'vertical' }} />
+                <div>
+                  <label className="block text-sm font-medium text-[#1a2e2b] mb-1">Mensaje</label>
+                  <textarea name="mensaje" value={form.mensaje} onChange={onChange} rows={4}
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#2a7c6f] focus:ring-1 focus:ring-[#2a7c6f] resize-none"
+                    placeholder="Cuentame brevemente tu consulta..."/>
                 </div>
-                <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center' }}>Enviar mensaje</button>
+                <button type="submit"
+                  className="w-full bg-[#2a7c6f] text-white font-bold py-3.5 rounded-xl hover:bg-[#1f5e54] transition-colors">
+                  Enviar por WhatsApp
+                </button>
               </form>
             )}
           </div>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          #contacto .container-custom > div:last-child { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </section>
   )
 }

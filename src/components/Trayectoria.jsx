@@ -1,75 +1,49 @@
-import { FaBriefcase } from 'react-icons/fa'
-
-const experiencia = [
+const exp = [
   {
-    periodo: '2018 - Presente',
-    cargo: 'Psicóloga Clínica',
-    lugar: 'Centro Psicológico Centenario',
-    desc: 'Atención psicológica individual, familiar e infanto-juvenil. Aplicación de evaluaciones psicodiagnósticas. Coordinación de intervenciones multidisciplinarias.',
-    tipo: 'Clínico',
+    periodo: "2015 - Actualidad",
+    cargo: "Psicologa Clinica",
+    lugar: "Centro Psicologico Centenario, Maipo",
+    desc: "Atencion psicologica individual, infantil y familiar. Psicodiagnostico, psicoterapia y orientacion a padres. Coordinacion con equipo multidisciplinario."
   },
   {
-    periodo: '2016 - Presente',
-    cargo: 'Perito Judicial Independiente',
-    lugar: 'Ejercicio Independiente',
-    desc: 'Elaboración de informes psicológicos y psicosociales para el Tribunal de Juicio Oral en lo Penal, Juzgados de Familia y Fiscalía. Declaración en juicio oral como perito.',
-    tipo: 'Forense',
+    periodo: "2018 - Actualidad",
+    cargo: "Perito Judicial Forense Independiente",
+    lugar: "Tribunales de Familia y Juzgados de Garantia, Region Metropolitana",
+    desc: "Elaboracion de informes psicologicos periciales. Evaluacion de dano psicologico, competencias parentales, credibilidad de testimonio y estado mental. Declaracion como testigo experto."
   },
   {
-    periodo: '2014 - 2018',
-    cargo: 'Psicóloga Clínica',
-    lugar: 'CESFAM Maipú',
-    desc: 'Atención de pacientes en programa de salud mental, intervenciones en crisis, grupos terapéuticos y apoyo a equipos de salud.',
-    tipo: 'Clínico',
-  },
-  {
-    periodo: '2013 - 2015',
-    cargo: 'Psicóloga Infantojuvenil',
-    lugar: 'OPD Maipú',
-    desc: 'Atención psicológica a niños y adolescentes en situación de vulneración de derechos. Trabajo coordinado con el sistema judicial y protección de la infancia.',
-    tipo: 'Social',
+    periodo: "2012 - 2015",
+    cargo: "Psicologa Clinica",
+    lugar: "CESFAM, Municipalidad de Maipo",
+    desc: "Atencion en salud mental primaria. Psicoterapia breve, crisis y derivacion. Trabajo con programas de violencia intrafamiliar y salud mental comunitaria."
   },
 ]
 
 export default function Trayectoria() {
-  const colorTipo = { 'Clínico': '#2a7c6f', 'Forense': '#1f5e54', 'Social': '#3a9e8e' }
-
   return (
-    <section id="trayectoria" style={{ background: '#f5f0eb', padding: '5rem 1.5rem' }}>
-      <div className="container-custom">
-        <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-          <span style={{ color: '#2a7c6f', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Trayectoria</span>
-          <h2 style={{ fontSize: '2.2rem', fontWeight: 700, color: '#1a2e2b', margin: '0.5rem 0 1rem' }}>Experiencia Profesional</h2>
-          <p style={{ color: '#4a6b66', fontSize: '1rem', maxWidth: '540px', margin: '0 auto', lineHeight: 1.7 }}>
-            Más de una década de trayectoria en salud mental clínica y el ámbito forense.
-          </p>
+    <section id="trayectoria" className="py-24 bg-[#f5f0eb]">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <span className="text-[#2a7c6f] font-semibold text-sm uppercase tracking-widest">Experiencia</span>
+          <h2 className="mt-2 text-3xl md:text-4xl font-bold text-[#1a2e2b]">Trayectoria profesional</h2>
         </div>
-
-        <div style={{ position: 'relative', maxWidth: '750px', margin: '0 auto' }}>
-          {/* Timeline line */}
-          <div style={{ position: 'absolute', left: '20px', top: 0, bottom: 0, width: '2px', background: '#2a7c6f', opacity: 0.3 }} />
-
-          {experiencia.map((e, i) => (
-            <div key={i} style={{ display: 'flex', gap: '2rem', marginBottom: '2.5rem', position: 'relative' }}>
-              {/* Dot */}
-              <div style={{ width: '42px', height: '42px', borderRadius: '50%', background: colorTipo[e.tipo] || '#2a7c6f', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, zIndex: 1 }}>
-                <FaBriefcase color="#fff" size={16} />
-              </div>
-              <div className="card" style={{ flex: 1 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.4rem' }}>
-                  <div>
-                    <h3 style={{ fontWeight: 700, color: '#1a2e2b', fontSize: '1.05rem' }}>{e.cargo}</h3>
-                    <span style={{ color: '#2a7c6f', fontWeight: 600, fontSize: '0.9rem' }}>{e.lugar}</span>
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.3rem' }}>
-                    <span style={{ background: '#e8f4f1', color: '#2a7c6f', padding: '0.2rem 0.7rem', borderRadius: '2rem', fontSize: '0.75rem', fontWeight: 600 }}>{e.tipo}</span>
-                    <span style={{ color: '#4a6b66', fontSize: '0.82rem' }}>{e.periodo}</span>
-                  </div>
+        <div className="relative">
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-[#2a7c6f]/30 hidden md:block"></div>
+          <div className="space-y-10">
+            {exp.map((e, i) => (
+              <div key={i} className="md:flex gap-8 items-start">
+                <div className="hidden md:flex flex-col items-center">
+                  <div className="w-4 h-4 rounded-full bg-[#2a7c6f] border-4 border-[#f5f0eb] mt-1 z-10"></div>
                 </div>
-                <p style={{ color: '#4a6b66', fontSize: '0.88rem', lineHeight: 1.7, marginTop: '0.5rem' }}>{e.desc}</p>
+                <div className="bg-white rounded-2xl p-7 flex-1 shadow-sm">
+                  <span className="inline-block bg-[#e8f4f1] text-[#2a7c6f] text-xs font-bold px-3 py-1 rounded-full mb-3">{e.periodo}</span>
+                  <h3 className="text-lg font-bold text-[#1a2e2b]">{e.cargo}</h3>
+                  <p className="text-[#2a7c6f] font-medium text-sm mb-3">{e.lugar}</p>
+                  <p className="text-[#4a6b66] text-sm leading-relaxed">{e.desc}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

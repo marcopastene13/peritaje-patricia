@@ -1,48 +1,37 @@
-import { FaGavel, FaFileAlt, FaSearch, FaClipboardList, FaChild, FaUsers } from 'react-icons/fa'
-
-const peritajes = [
-  { icon: <FaFileAlt size={24} color="#fff" />, title: 'Informe de Daño Psicológico', desc: 'Evaluación y cuantificación del daño psicológico en víctimas de delitos, violencia intrafamiliar y agresiones sexuales.' },
-  { icon: <FaUsers size={24} color="#fff" />, title: 'Competencias Parentales', desc: 'Evaluación de las capacidades parentales en procesos de tuición, cuidado personal y relación directa y regular.' },
-  { icon: <FaChild size={24} color="#fff" />, title: 'Evaluación de NNA', desc: 'Evaluación psicológica de niños, niñas y adolescentes en contextos de vulneración de derechos y procesos judiciales.' },
-  { icon: <FaSearch size={24} color="#fff" />, title: 'Credibilidad de Testimonio', desc: 'Análisis de la credibilidad del relato en causas de abuso sexual infantil y otros delitos contra las personas.' },
-  { icon: <FaClipboardList size={24} color="#fff" />, title: 'Informe Psicosocial', desc: 'Evaluación integral del contexto familiar, social y psicológico del peritado para distintos tribunales de justicia.' },
-  { icon: <FaGavel size={24} color="#fff" />, title: 'Declaración en Juicio Oral', desc: 'Presentación y defensa técnica de peritajes ante el Tribunal de Juicio Oral en lo Penal y otros tribunales.' },
+const tipos = [
+  { title:"Dano psicologico", desc:"Evaluacion del impacto psicologico en victimas de delitos, accidentes o situaciones traumaticas para causas penales y civiles." },
+  { title:"Competencias parentales", desc:"Evaluacion de las habilidades y capacidades de progenitores en contexto de tuicion, visitas y cuidado personal de hijos." },
+  { title:"Credibilidad del testimonio", desc:"Evaluacion de la coherencia, consistencia y veracidad del relato en victimas y testigos, especialmente en menores." },
+  { title:"Estado mental", desc:"Evaluacion psicologica para determinar el estado mental al momento de los hechos en causas penales." },
+  { title:"Evaluacion de menores", desc:"Entrevista y evaluacion psicologica especializada de ninos y adolescentes en contexto judicial." },
+  { title:"Informes y declaracion en juicio", desc:"Elaboracion de informes periciales y participacion como testigo experto en audiencias de tribunales de familia y penal." },
 ]
 
 export default function Peritajes() {
   return (
-    <section id="peritajes" style={{ background: '#1f5e54', padding: '5rem 1.5rem' }}>
-      <div className="container-custom">
-        <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-          <span style={{ color: '#a8d5cd', fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Peritaje Forense</span>
-          <h2 style={{ fontSize: '2.2rem', fontWeight: 700, color: '#ffffff', margin: '0.5rem 0 1rem' }}>Peritajes Psicológicos Judiciales</h2>
-          <p style={{ color: '#a8d5cd', fontSize: '1rem', maxWidth: '560px', margin: '0 auto', lineHeight: 1.7 }}>
-            Elaboración de informes técnicos y psicosociales para el ámbito judicial, con rigurosidad metodológica y respaldo científico.
-          </p>
+    <section id="peritajes" className="py-24 bg-[#1a2e2b]">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <span className="text-[#a8dfd5] font-semibold text-sm uppercase tracking-widest">Pericia forense</span>
+          <h2 className="mt-2 text-3xl md:text-4xl font-bold text-white">Peritaje Judicial Forense</h2>
+          <p className="mt-4 text-white/60 max-w-2xl mx-auto">Elaboro informes periciales psicologicos con rigor tecnico-cientifico para tribunales de familia y juzgados de garantia.</p>
         </div>
-
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
-          {peritajes.map(p => (
-            <div key={p.title} style={{ background: 'rgba(255,255,255,0.08)', borderRadius: '0.75rem', padding: '1.8rem', border: '1px solid rgba(255,255,255,0.12)', transition: 'background 0.2s' }}>
-              <div style={{ width: '48px', height: '48px', background: 'rgba(255,255,255,0.15)', borderRadius: '0.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
-                {p.icon}
-              </div>
-              <h3 style={{ color: '#ffffff', fontWeight: 700, fontSize: '1rem', marginBottom: '0.6rem' }}>{p.title}</h3>
-              <p style={{ color: '#a8d5cd', fontSize: '0.88rem', lineHeight: 1.7 }}>{p.desc}</p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {tipos.map((t,i) => (
+            <div key={i} className="border border-white/10 rounded-2xl p-7 hover:border-[#2a7c6f] hover:bg-white/5 transition-all">
+              <div className="w-10 h-1 bg-[#2a7c6f] rounded mb-5"></div>
+              <h3 className="text-white font-bold text-base mb-2">{t.title}</h3>
+              <p className="text-white/60 text-sm leading-relaxed">{t.desc}</p>
             </div>
           ))}
         </div>
-
-        {/* Info box */}
-        <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '1rem', padding: '2rem', border: '1px solid rgba(255,255,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1.5rem' }}>
-          <div>
-            <h3 style={{ color: '#ffffff', fontWeight: 700, fontSize: '1.2rem', marginBottom: '0.4rem' }}>Tribunales donde me desempeño</h3>
-            <p style={{ color: '#a8d5cd', fontSize: '0.9rem', lineHeight: 1.6 }}>
-              Tribunal de Juicio Oral en lo Penal • Juzgados de Familia • Fiscales del Ministerio Público • Defensoría Penal Pública
-            </p>
-          </div>
-          <a href="#contacto" style={{ background: '#ffffff', color: '#1f5e54', padding: '0.8rem 2rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', fontSize: '0.95rem', whiteSpace: 'nowrap' }}>
-            Solicitar peritaje
+        <div className="mt-16 bg-[#2a7c6f]/20 border border-[#2a7c6f]/30 rounded-2xl p-8 text-center">
+          <h3 className="text-white font-bold text-xl mb-2">Necesitas un peritaje psicologico?</h3>
+          <p className="text-white/70 mb-6">Contactame para evaluar tu caso y elaborar el informe pericial que necesitas.</p>
+          <a href="https://wa.me/56912345678?text=Hola Patricia, necesito un peritaje psicologico"
+            target="_blank" rel="noreferrer"
+            className="inline-flex items-center gap-2 bg-[#2a7c6f] text-white font-semibold px-8 py-3.5 rounded-full hover:bg-[#3a9e8e] transition-colors">
+            Consultar sobre peritaje
           </a>
         </div>
       </div>
