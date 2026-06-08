@@ -14,8 +14,8 @@ export default function App() {
       <Navbar />
       <Hero />
       <Sobre />
-      <Servicios />
       <Peritajes />
+      <Servicios />
       <Trayectoria />
       <Formacion />
       <Contacto />

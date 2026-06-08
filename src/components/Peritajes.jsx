@@ -1,5 +1,5 @@
 const tipos = [
-  { title:"Dano psicologico", desc:"Evaluacion del impacto psicologico en victimas de delitos, accidentes o situaciones traumaticas para causas penales y civiles." },
+  { title:"Daño psicologico", desc:"Evaluacion del impacto psicologico en victimas de delitos, accidentes o situaciones traumaticas para causas penales y civiles." },
   { title:"Competencias parentales", desc:"Evaluacion de las habilidades y capacidades de progenitores en contexto de tuicion, visitas y cuidado personal de hijos." },
   { title:"Credibilidad del testimonio", desc:"Evaluacion de la coherencia, consistencia y veracidad del relato en victimas y testigos, especialmente en menores." },
   { title:"Estado mental", desc:"Evaluacion psicologica para determinar el estado mental al momento de los hechos en causas penales." },
