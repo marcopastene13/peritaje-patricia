@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react'
 
-const WA = 'https://wa.me/56986431293'
-
 const links = [
-  { label: 'Sobre mí', href: '#sobre' },
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Peritajes', href: '#peritajes' },
-  { label: 'Trayectoria', href: '#trayectoria' },
-  { label: 'Formación', href: '#formacion' },
-  { label: 'Contacto', href: '#contacto' },
+  { href: '#sobre', label: 'Sobre mí' },
+  { href: '#servicios', label: 'Servicios' },
+  { href: '#peritajes', label: 'Peritajes' },
+  { href: '#trayectoria', label: 'Trayectoria' },
+  { href: '#formacion', label: 'Formación' },
+  { href: '#contacto', label: 'Contacto' },
 ]
 
 export default function Navbar() {
@@ -28,8 +26,9 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         <a href="#inicio" className="flex flex-col leading-tight">
           <span className="text-lg font-bold text-[#2a7c6f]">Patricia Santander</span>
-          <span className="text-xs text-[#4a6b66] font-medium">Psicóloga Clínica & Perito Forense</span>
+          <span className="text-xs text-[#4a6b66]">Psicóloga Clínica &amp; Perito Forense</span>
         </a>
+
         <nav className="hidden md:flex gap-7">
           {links.map(l => (
             <a key={l.href} href={l.href}
@@ -38,29 +37,29 @@ export default function Navbar() {
             </a>
           ))}
         </nav>
-        <a href={`${WA}?text=Hola Patricia, quisiera agendar una hora`}
+
+        <a href="https://wa.me/56986431293?text=Hola Patricia, quisiera agendar una hora"
           target="_blank" rel="noreferrer"
-          className="hidden md:inline-flex items-center gap-2 bg-[#2a7c6f] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#1f5e54] transition-colors">
+          className="hidden md:inline-block bg-[#2a7c6f] hover:bg-[#1f6459] text-white text-sm font-semibold px-5 py-2.5 rounded-xl transition-colors">
           Agendar hora
         </a>
-        <button onClick={() => setOpen(!open)} className="md:hidden p-2 text-[#2a7c6f]">
-          <span className="block w-6 h-0.5 bg-current mb-1"></span>
-          <span className="block w-6 h-0.5 bg-current mb-1"></span>
-          <span className="block w-6 h-0.5 bg-current"></span>
+
+        <button className="md:hidden text-[#1a2e2b]" onClick={() => setOpen(!open)}>
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+              d={open ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
+          </svg>
         </button>
       </div>
+
       {open && (
-        <div className="md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-white px-6 pb-4 shadow-lg">
           {links.map(l => (
             <a key={l.href} href={l.href} onClick={() => setOpen(false)}
-              className="text-sm font-medium text-[#1a2e2b] hover:text-[#2a7c6f]">
+              className="block py-2 text-sm font-medium text-[#1a2e2b] hover:text-[#2a7c6f]">
               {l.label}
             </a>
           ))}
-          <a href={WA}
-            className="bg-[#2a7c6f] text-white text-sm font-semibold px-5 py-2.5 rounded-full text-center hover:bg-[#1f5e54]">
-            Agendar hora
-          </a>
         </div>
       )}
     </header>
