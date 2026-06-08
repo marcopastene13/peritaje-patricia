@@ -2,7 +2,7 @@ const exp = [
   {
     periodo: "2015 - Actualidad",
     cargo: "Psicologa Clinica",
-    lugar: "Centro Psicologico Centenario, Maipo",
+    lugar: "Centro Psicologico Centenario, Maipu",
     desc: "Atencion psicologica individual, infantil y familiar. Psicodiagnostico, psicoterapia y orientacion a padres. Coordinacion con equipo multidisciplinario."
   },
   {

@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from 'react'
+
+const WA = 'https://wa.me/56986431293'
 
 const links = [
-  { label: "Sobre mi", href: "#sobre" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Peritajes", href: "#peritajes" },
-  { label: "Trayectoria", href: "#trayectoria" },
-  { label: "Formacion", href: "#formacion" },
-  { label: "Contacto", href: "#contacto" },
+  { label: 'Sobre mí', href: '#sobre' },
+  { label: 'Servicios', href: '#servicios' },
+  { label: 'Peritajes', href: '#peritajes' },
+  { label: 'Trayectoria', href: '#trayectoria' },
+  { label: 'Formación', href: '#formacion' },
+  { label: 'Contacto', href: '#contacto' },
 ]
 
 export default function Navbar() {
@@ -15,18 +17,18 @@ export default function Navbar() {
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 20)
-    window.addEventListener("scroll", fn)
-    return () => window.removeEventListener("scroll", fn)
+    window.addEventListener('scroll', fn)
+    return () => window.removeEventListener('scroll', fn)
   }, [])
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+      scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
     }`}>
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         <a href="#inicio" className="flex flex-col leading-tight">
           <span className="text-lg font-bold text-[#2a7c6f]">Patricia Santander</span>
-          <span className="text-xs text-[#4a6b66] font-medium">Psicologa Clinica & Perito Forense</span>
+          <span className="text-xs text-[#4a6b66] font-medium">Psicóloga Clínica & Perito Forense</span>
         </a>
         <nav className="hidden md:flex gap-7">
           {links.map(l => (
@@ -36,7 +38,7 @@ export default function Navbar() {
             </a>
           ))}
         </nav>
-        <a href="https://wa.me/56912345678?text=Hola Patricia, quisiera agendar una hora"
+        <a href={`${WA}?text=Hola Patricia, quisiera agendar una hora`}
           target="_blank" rel="noreferrer"
           className="hidden md:inline-flex items-center gap-2 bg-[#2a7c6f] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#1f5e54] transition-colors">
           Agendar hora
@@ -55,7 +57,7 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <a href="https://wa.me/56912345678"
+          <a href={WA}
             className="bg-[#2a7c6f] text-white text-sm font-semibold px-5 py-2.5 rounded-full text-center hover:bg-[#1f5e54]">
             Agendar hora
           </a>

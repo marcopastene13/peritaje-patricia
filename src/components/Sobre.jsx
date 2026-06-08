@@ -15,12 +15,12 @@ export default function Sobre() {
               Mas de una decada<br/>acompanando vidas
             </h2>
             <p className="mt-6 text-[#4a6b66] leading-relaxed">
-              Soy Patricia Santander, psicologa clinica titulada con mas de 10 anos de experiencia
+              Soy Patricia Santander, psicologa clinica titulada con mas de 10 años de experiencia
               en atencion psicologica y pericia forense. Trabajo con ninos, adolescentes, adultos
               y familias desde una perspectiva integradora y centrada en la persona.
             </p>
             <p className="mt-4 text-[#4a6b66] leading-relaxed">
-              Mi labor clinica se desarrolla en el Centro Psicologico Centenario en Maipo,
+              Mi labor clinica se desarrolla en el Centro Psicologico Centenario en Maipu,
               donde ofrezco psicoterapia individual y familiar, ademas de psicodiagnostico.
               En paralelo, ejerzo como perito judicial forense independiente en causas de
               familia y penales, elaborando informes tecnicos para tribunales de justicia.

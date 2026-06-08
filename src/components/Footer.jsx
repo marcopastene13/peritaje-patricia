@@ -30,16 +30,16 @@ export default function Footer() {
           <div>
             <p className="text-white font-semibold mb-4">Contacto rapido</p>
             <div className="space-y-3">
-              <a href="https://wa.me/56912345678" target="_blank" rel="noreferrer"
+              <a href="https://wa.me/56986431293" target="_blank" rel="noreferrer"
                 className="flex items-center gap-3 text-sm hover:text-white transition-colors">
-                <span className="text-[#2a7c6f]">•</span> WhatsApp: +56 9 1234 5678
+                <span className="text-[#2a7c6f]">•</span> WhatsApp: +56 9 8643 1293
               </a>
-              <a href="mailto:patricia.santander@psicologa.cl"
+              <a href="mailto:cconsultapsicologica@gmail.com"
                 className="flex items-center gap-3 text-sm hover:text-white transition-colors">
-                <span className="text-[#2a7c6f]">•</span> patricia.santander@psicologa.cl
+                <span className="text-[#2a7c6f]">•</span> cconsultapsicologica@gmail.com
               </a>
               <p className="flex items-center gap-3 text-sm">
-                <span className="text-[#2a7c6f]">•</span> Maipo, Region Metropolitana
+                <span className="text-[#2a7c6f]">•</span> Maipu, Region Metropolitana
               </p>
             </div>
           </div>

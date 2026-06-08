@@ -28,7 +28,7 @@ export default function Peritajes() {
         <div className="mt-16 bg-[#2a7c6f]/20 border border-[#2a7c6f]/30 rounded-2xl p-8 text-center">
           <h3 className="text-white font-bold text-xl mb-2">Necesitas un peritaje psicologico?</h3>
           <p className="text-white/70 mb-6">Contactame para evaluar tu caso y elaborar el informe pericial que necesitas.</p>
-          <a href="https://wa.me/56912345678?text=Hola Patricia, necesito un peritaje psicologico"
+          <a href="https://wa.me/56986431293?text=Hola Patricia, necesito un peritaje psicologico"
             target="_blank" rel="noreferrer"
             className="inline-flex items-center gap-2 bg-[#2a7c6f] text-white font-semibold px-8 py-3.5 rounded-full hover:bg-[#3a9e8e] transition-colors">
             Consultar sobre peritaje

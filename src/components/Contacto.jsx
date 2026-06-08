@@ -11,7 +11,7 @@ export default function Contacto() {
     const txt = encodeURIComponent(
       `Hola Patricia! Mi nombre es ${form.nombre}.%0AEmail: ${form.email}%0ATelefono: ${form.telefono}%0ATipo: ${form.tipo}%0AMensaje: ${form.mensaje}`
     )
-    window.open(`https://wa.me/56912345678?text=${txt}`, "_blank")
+    window.open(`https://wa.me/56986431293?text=${txt}`, "_blank")
     setEnviado(true)
   }
 
@@ -31,7 +31,7 @@ export default function Contacto() {
               </div>
               <div>
                 <p className="font-bold text-[#1a2e2b]">WhatsApp</p>
-                <a href="https://wa.me/56912345678" className="text-[#2a7c6f] hover:underline">+56 9 1234 5678</a>
+                <a href="https://wa.me/56986431293" className="text-[#2a7c6f] hover:underline">+56 9 8643 1293</a>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -40,7 +40,7 @@ export default function Contacto() {
               </div>
               <div>
                 <p className="font-bold text-[#1a2e2b]">Email</p>
-                <a href="mailto:patricia.santander@psicologa.cl" className="text-[#2a7c6f] hover:underline">patricia.santander@psicologa.cl</a>
+                <a href="mailto:cconsultapsicologica@gmail.com" className="text-[#2a7c6f] hover:underline">cconsultapsicologica@gmail.com</a>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -49,7 +49,7 @@ export default function Contacto() {
               </div>
               <div>
                 <p className="font-bold text-[#1a2e2b]">Ubicacion</p>
-                <p className="text-[#4a6b66]">Centro Psicologico Centenario<br/>Maipo, Region Metropolitana</p>
+                <p className="text-[#4a6b66]">Centro Psicologico Centenario<br/>Maipu, Region Metropolitana</p>
               </div>
             </div>
             <div className="flex items-start gap-4">

@@ -26,7 +26,7 @@ export default function Servicios() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <a href="https://wa.me/56912345678" target="_blank" rel="noreferrer"
+          <a href="https://wa.me/56986431293?text=Hola Patricia, quisiera solicitar tus servicios" target="_blank" rel="noreferrer"
             className="inline-flex items-center gap-2 bg-[#2a7c6f] text-white font-semibold px-8 py-3.5 rounded-full hover:bg-[#1f5e54] transition-colors">
             Solicitar hora de atencion
           </a>
