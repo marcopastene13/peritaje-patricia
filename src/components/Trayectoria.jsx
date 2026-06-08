@@ -2,7 +2,7 @@ const exp = [
   {
     periodo: "2015 - Actualidad",
     cargo: "Psicologa Clinica",
-    lugar: "Centro Psicologico Centenario, Maipu",
+    lugar: "Centro Psicologico Centenario, Maipú",
     desc: "Atencion psicologica individual, infantil y familiar. Psicodiagnostico, psicoterapia y orientacion a padres. Coordinacion con equipo multidisciplinario."
   },
   {
@@ -14,7 +14,7 @@ const exp = [
   {
     periodo: "2012 - 2015",
     cargo: "Psicologa Clinica",
-    lugar: "CESFAM, Municipalidad de Maipo",
+    lugar: "CESFAM, Municipalidad de Maipú",
     desc: "Atencion en salud mental primaria. Psicoterapia breve, crisis y derivacion. Trabajo con programas de violencia intrafamiliar y salud mental comunitaria."
   },
 ]

@@ -1,5 +1,5 @@
 const academica = [
-  { titulo: "Psicologa", inst: "Universidad de Santiago de Chile (USACH)", anno: "2012" },
+  { titulo: "Psicologa", inst: "Universidad de Las Americas (UDLA)", anno: "2012" },
 ]
 const posgrado = [
   { titulo: "Diplomado en Psicologia Juridica y Pericia Forense", inst: "Universidad Andres Bello (UNAB)", anno: "2019" },

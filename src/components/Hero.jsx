@@ -32,7 +32,7 @@ export default function Hero() {
           <div className="mt-12 flex gap-8">
             <div>
               <p className="text-3xl font-bold text-white">+10</p>
-              <p className="text-white/70 text-sm">Áreas de experiencia</p>
+              <p className="text-white/70 text-sm">Años de experiencia</p>
             </div>
             <div className="w-px bg-white/20"></div>
             <div>
