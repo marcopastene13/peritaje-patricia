@@ -1,43 +1,67 @@
 export default function Sobre() {
-  const rasgos = [
-    { icon: "❤", title: "Enfoque humanista", desc: "Cada persona es unica. Adapto el proceso terapeutico a tus necesidades reales." },
-    { icon: "⚖", title: "Experiencia forense", desc: "Peritajes psicologicos con rigurosidad tecnica y respaldo cientifico para tribunales." },
-    { icon: "🤝", title: "Alianza terapeutica", desc: "Construyo un vinculo de confianza para que el proceso sea seguro y transformador." },
-    { icon: "📚", title: "Formacion continua", desc: "Actualizacion permanente en psicoterapia, psicodiagnostico y pericia judicial." },
-  ]
   return (
-    <section id="sobre" className="py-24 bg-[#f5f0eb]">
+    <section id="sobre" className="py-20 bg-[#f5f0e8]">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <span className="text-[#2a7c6f] font-semibold text-sm uppercase tracking-widest">Sobre mi</span>
-            <h2 className="mt-2 text-3xl md:text-4xl font-bold text-[#1a2e2b] leading-tight">
-              Mas de una decada<br/>acompanando vidas
+
+        {/* Layout dos columnas */}
+        <div className="flex flex-col lg:flex-row items-center gap-14">
+
+          {/* Foto con decoración */}
+          <div className="flex-shrink-0 relative">
+            <div className="w-72 h-96 lg:w-80 lg:h-[26rem] rounded-3xl overflow-hidden shadow-2xl border-4 border-[#2a7c6f]/20">
+              <img
+                src="/images/patty.jpg"
+                alt="Patricia Santander Riquelme - Psicóloga Clínica"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            {/* Tarjeta flotante credencial */}
+            <div className="absolute -bottom-6 -right-6 bg-[#2a7c6f] text-white rounded-2xl px-5 py-4 shadow-xl max-w-[180px]">
+              <p className="text-xs font-semibold uppercase tracking-wide opacity-80">Registro</p>
+              <p className="text-sm font-bold leading-snug mt-1">Superintendencia de Salud Chile</p>
+            </div>
+            {/* Acento decorativo */}
+            <div className="absolute -top-4 -left-4 w-20 h-20 bg-[#c8a96e]/30 rounded-full blur-xl" />
+          </div>
+
+          {/* Texto */}
+          <div className="flex-1">
+            <span className="inline-block text-[#2a7c6f] text-sm font-semibold tracking-widest uppercase mb-3">
+              Sobre mí
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2e2b] mb-6 leading-tight">
+              Psicóloga Clínica &amp;<br />
+              <span className="text-[#2a7c6f]">Perito Judicial</span>
             </h2>
-            <p className="mt-6 text-[#4a6b66] leading-relaxed">
-              Soy Patricia Santander, psicologa clinica titulada con mas de 10 años de experiencia
-              en atencion psicologica y pericia forense. Trabajo con ninos, adolescentes, adultos
-              y familias desde una perspectiva integradora y centrada en la persona.
+            <p className="text-[#4a6b66] text-lg leading-relaxed mb-5">
+              Soy Patricia Santander Riquelme, psicóloga clínica con más de 15 años de trayectoria
+              profesional en el ámbito de la salud mental y la psicología forense en Chile.
             </p>
-            <p className="mt-4 text-[#4a6b66] leading-relaxed">
-              Mi labor clinica se desarrolla en el Centro Psicologico Centenario en Maipu,
-              donde ofrezco psicoterapia individual y familiar, ademas de psicodiagnostico.
-              En paralelo, ejerzo como perito judicial forense independiente en causas de
-              familia y penales, elaborando informes tecnicos para tribunales de justicia.
+            <p className="text-[#4a6b66] leading-relaxed mb-8">
+              Me especializo en la realización de peritajes psicológicos para tribunales de familia,
+              penales y civiles, aportando rigor técnico, ética profesional y una mirada humana
+              a cada caso. Mi trabajo contribuye directamente a la administración de justicia,
+              siempre con el bienestar de las personas como eje central.
             </p>
-            <a href="#contacto"
-              className="inline-block mt-8 bg-[#2a7c6f] text-white font-semibold px-8 py-3 rounded-full hover:bg-[#1f5e54] transition-colors">
+
+            {/* Datos destacados */}
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-[#2a7c6f]/10">
+                <p className="text-2xl font-bold text-[#2a7c6f]">+15 años</p>
+                <p className="text-sm text-[#4a6b66] mt-1">Experiencia clínica y forense</p>
+              </div>
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-[#2a7c6f]/10">
+                <p className="text-2xl font-bold text-[#2a7c6f]">+100</p>
+                <p className="text-sm text-[#4a6b66] mt-1">Peritajes en tribunales</p>
+              </div>
+            </div>
+
+            <a
+              href="#contacto"
+              className="inline-block bg-[#2a7c6f] hover:bg-[#1f6459] text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-md"
+            >
               Contactar ahora
             </a>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {rasgos.map((r, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
-                <span className="text-3xl">{r.icon}</span>
-                <h3 className="mt-3 font-bold text-[#1a2e2b] text-sm">{r.title}</h3>
-                <p className="mt-1 text-[#4a6b66] text-xs leading-relaxed">{r.desc}</p>
-              </div>
-            ))}
           </div>
         </div>
       </div>
